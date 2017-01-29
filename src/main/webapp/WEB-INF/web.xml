@@ -33,6 +33,31 @@
     <load-on-startup>1</load-on-startup>
   </servlet>
 
+  <!-- A T M O S P H E R E         C O N F I G U R A T I O N -->
+  <servlet>
+    <description>AtmosphereServlet</description>
+    <servlet-name>AtmosphereServlet</servlet-name>
+    <servlet-class>org.atmosphere.cpr.AtmosphereServlet</servlet-class>
+
+    <init-param>
+      <param-name>org.atmosphere.cpr.packages</param-name>
+      <param-value>app1.utilities.chat</param-value>
+    </init-param>
+
+    <init-param>
+      <param-name>org.atmosphere.interceptor.HeartbeatInterceptor.clientHeartbeatFrequencyInSeconds</param-name>
+      <param-value>10</param-value>
+    </init-param>
+
+    <load-on-startup>0</load-on-startup>
+    <async-supported>true</async-supported>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>AtmosphereServlet</servlet-name>
+    <url-pattern>/chat/*</url-pattern>
+  </servlet-mapping>
+
   <servlet-mapping>
     <servlet-name>dispatcher</servlet-name>
     <url-pattern>/</url-pattern>

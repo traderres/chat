@@ -59,6 +59,32 @@ public class WelcomeController
         logger.debug("mainPage() finished");
         return mav;
     }
+
+    /**********************************************************************
+     * showChatPage()
+     ***********************************************************************/
+    @RequestMapping("/chatpage")
+    public ModelAndView showChatPage( Model aModel )
+    {
+        logger.debug("showChatPage() started");
+
+        // Create a modelAndView object
+        ModelAndView mav = new ModelAndView();
+
+        // Show the chat.jsp page
+        mav.setViewName("chat.jsp");
+
+        // Create a userInfo object
+        UserInfo userInfo = new UserInfo();
+        userInfo.setUserName("Adam");
+        userInfo.setIsAdministrator(true);
+
+        // Add the userInfo information to the view
+        mav.addObject("userInfo", userInfo);
+
+        logger.debug("showChatPage() finished");
+        return mav;
+    }
 }
                     
         

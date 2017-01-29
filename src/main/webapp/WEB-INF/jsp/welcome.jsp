@@ -23,6 +23,11 @@ Are you an administrator: ${userInfo.isAdministrator }
 <br/>
 <br/>
 
+Link to the <a href="${contextPath}/chatpage">Chat Page</a>
+<br/>
+<br/>
+<br/>
+
 <%-- S T A N D A R D       F O O T E R  --%>
 <%@ include file="/WEB-INF/jsp/stdFooter.jsp" %>
 
